@@ -1,0 +1,10 @@
+set-1
+1.SELECT Project.location, AVG(Employee.salary) As avg_salary, COUNT(Employee.id) AS total_employees
+FROM Employee JOIN Assign ON Employee.id = Assign.id JOIN Project ON Assign.p_no = Project.p_no
+GROUP BY Project.location;
+
+2.SELECT location,avg(budget) as avg_budget from Project GROUP by location HAVING avg(budget) > 20000;
+
+3.SELECT Employee.id,Employee.name FROM Employee JOIN Assign ON Employee.id = Assign.id JOIN Project on Assign.P_no = Project.P_no WHERE Project.location = 'Paris' AND Assign.date = 'July';
+
+4.SELECT Employee.id,Employee.name FROM Employee JOIN Assign ON Employee.id = Assign.id JOIN Project on Assign.P_no = Project.P_no WHERE Project.location = 'New York' AND Project.budget >= 20000;
